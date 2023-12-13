@@ -16,3 +16,31 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/hello', function () {
+    return "Hello World";
+});
+
+
+Route::get('/add/{a}/{b}', function ($a, $b) {
+    return $a + $b;
+});
+
+
+Route::get('/subtract/{a}/{b}', function ($a, $b) {
+    return $a - $b;
+});
+
+
+Route::get('/multiply/{a}/{b}', function ($a, $b) {
+    return $a * $b;
+});
+
+
+Route::get('/divide/{a}/{b}', function ($a, $b) {
+    if ($b == 0) {
+        return "Dzielenie przez zero nie jest możliwe";
+    } else {
+        return $a / $b;
+    }
+});
